@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+        <link href="css/estiloRegister.css"rel="stylesheet"/>
+{% endblock %}
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+    <main>
+        <div class="contenedor__todo">
+            <div class="caja__trasera">
+                <div class="caja__trasera-login">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión para entrar en la página</p>
+                    <a href="/login">
+                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    </a>
+                </div>
+            </div>
+            
+                <section class="contenedor__login-register">
+                    <div class="formulario__register">
+                        <h2>Registrarse</h2>  
+                        {{ form_start(registrationForm) }}                 
+                            {{ form_row(registrationForm.email) }}
+                            {{ form_row(registrationForm.plainPassword, {
+                                label: 'Contraseña'
+                            }) }}
+                            {{ form_row(registrationForm.agreeTerms, { label:'Aceptar términos y condiciones' }) }}
+                            <button type="submit" class="btn">Entrar</button>
+                        {{ form_end(registrationForm) }}
+                    </div>
+                </section>
+            
+        </div>
+    </main>
+
+{% endblock %}

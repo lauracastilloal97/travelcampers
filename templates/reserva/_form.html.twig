@@ -1,0 +1,92 @@
+{% block head %}
+{% block stylesheets %}
+<link href="../css/nuevaReserva.css" rel="stylesheet" />
+{% endblock %}
+
+{% endblock %}
+{% block body %}
+
+    <script>
+
+
+
+
+
+        window.onload = () =>{
+
+            var calendarioElt = document.getElementById("calendario");
+
+            var calendario = new FullCalendar.Calendar(calendarioElt,{
+
+
+                initialView: "dayGridMonth",
+                locale: "es",
+                timeZone: "Europe/Madrid",
+                headerToolbar:{
+
+                    start: "prev, next today",
+                    end: "title"
+                },
+
+                events:[
+
+            {% for events in reserva %}
+                  {
+                    id: '{{events.id}}',
+                    start: '{{events.fecha|date("Y-m-d")}}',
+                    display: 'list-item',
+                    },
+
+            {% endfor %}
+
+            ],
+
+                eventColor: 'white',
+                eventTextColor:"black",
+                eventBorderColor:"black",
+                eventClick: function(info) {
+
+                    location.href="../events/"+info.event.id;
+                },
+
+                eventDidMount: function(info){
+
+
+                    if(info.event.extendedProps.highlight == 1){
+
+                        info.el.style.backgroundColor = '#00D2B3';
+                        info.el.style.textColor = "white";
+
+                    }
+
+                },
+
+
+            })
+
+            calendario.render();
+
+
+        }
+    </script>
+{% if info|default %}
+    <p style="box-shadow: 0px 14px 32px 0px rgba(179,111,162,0.5); width: 50%;margin: 0 auto; text-align: center; background-color: #b36fa2; color: white;">{{info}}</p><br>
+{% endif %}
+<div class="container">
+    <div class="formulario col-md-12">
+
+        {{ form_start(form) }}
+        <br>
+        <div>
+            <img src="../img/calendar.png"><label><b>{{ form_row(form.fecha, {"label": "Entrada"})}}</b></label>
+        </div>
+        <div>
+            <label><b>{{ form_row(form.campers, {"label": "Campers"})}}</b></label>
+        </div><br>
+    </div>
+</div>
+<div class="botones">
+    <button class="btn">{{ button_label|default('Buscar') }}</button>
+</div>
+{{ form_end(form) }}
+{% endblock %}

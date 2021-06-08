@@ -1,0 +1,23 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.containers{
+    box-shadow: 0px 1px 10px rgba(179,111,162,0.5);
+}
+
+.box{
+    box-shadow: 0px 1px 10px rgba(179,111,162,0.5);
+    margin-right: 20px;
+}
+.ruta{
+    margin-left: 230px;
+}
+
+.obj{
+    margin-left: 80px;
+}
+
+.dia{
+    margin-left: 150px;
+}

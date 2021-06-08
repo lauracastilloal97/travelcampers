@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista Usuarios{% endblock %}
+
+
+
+{% block body %}
+
+
+
+
+ <div style="text-align: center;">
+    <h1>Usuarios</h1>
+    <br>
+    <form action="{{ path('user_index')}}" method="get">
+        <input type="submit" value="Generar informes" name="informe">
+    </form>
+</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.fistname }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">No se han encontrado resultados</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Reserva{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+        <link href="../../css/navBar.css"rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+    <h1>Edit Reserva</h1>
+
+    {{ include('reserva/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('reserva_index') }}">back to list</a>
+
+    {{ include('reserva/_delete_form.html.twig') }}
+{% endblock %}

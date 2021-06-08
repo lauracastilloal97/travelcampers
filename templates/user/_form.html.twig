@@ -1,0 +1,37 @@
+{% block head %}
+{% block stylesheets %}
+<link href="/css/userData.css" rel="stylesheet" />
+{% endblock %}
+
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="formulario col-md-12">
+        {{ form_start(form) }}
+        <br><div>
+            <label><b>{{ form_row(form.name, {"label": "Nombre"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.email, {"label": "Email"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.fistname, {"label": "Apellidos"})}}</b></label>
+        </div><br>
+        
+        <div>
+            <label><b>{{ form_row(form.dni, {"label": "Dni"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.city, {"label": "Ciudad"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.avatar, {"label": "Avatar"})}}</b></label>
+        </div><br>
+    </div>
+</div>
+<div class="botones">
+    <button class="btn">{{ button_label|default('Guardar') }}</button>
+</div>
+{{ form_end(form) }}
+{% endblock %}
+

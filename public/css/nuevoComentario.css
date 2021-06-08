@@ -1,0 +1,62 @@
+.formulario{
+
+    text-align: center;
+    background-color: #E8DAEF;
+    border: 2px solid #b36fa2;
+    border-radius: 8px;
+}
+
+.formulario input{
+
+    border:1px solid black;
+}
+
+h1{
+
+    text-align: center;
+    margin: 50px;
+
+}
+
+label{
+
+    width: 50%;
+}
+
+.form-inline label.required {
+
+     display: none;
+
+}
+
+
+.form-inline select {
+
+     border:1px solid #b36fa2;
+
+
+}
+
+.btn{
+
+    border: 1px solid #b36fa2;
+    background-color: #b36fa2;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;    
+    border-radius: 8px;
+
+}
+
+.btn:hover{
+    border: 1px solid #E8DAEF;
+    background-color:#E8DAEF;
+    color: #b36fa2;
+}
+.botones{
+     text-align: center;
+}
+

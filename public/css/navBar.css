@@ -1,0 +1,46 @@
+
+
+html{ height:100%; }
+body{ min-height:100%;  margin:0; position:relative;  padding-top:105px;}
+
+body::after{ content:''; display:block; height:100px;}
+
+h1,h2,h3,h4,h5,h6{
+
+    font-family: 'Josefin Slab', serif;
+    color: #566573 ;
+}
+
+p{
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+
+}
+
+.navbar{
+
+    font-family: 'Montserrat';
+    background: #E8DAEF;
+
+}
+
+
+.navbar p{
+
+    color:  #b36fa2;
+    padding-top: 20px;
+}
+
+a:link, a:visited, a:active {
+  text-decoration:none;
+}
+.dropdown-menu.dropdown-menu{
+
+    text-align: center;
+
+}
+a{
+    text-decoration: none;
+    color: #b36fa2;  
+}

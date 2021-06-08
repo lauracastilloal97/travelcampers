@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Campers{% endblock %}
+{% block head %}
+{% block stylesheets %}
+{{ parent() }}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link href="/css/listaCampers.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+{% endblock %}
+{% endblock %}
+
+{% block body %}
+
+<div>
+    <div>
+        <div>
+            <div>
+                <div class="home-freeforu pt-5 top-vh">
+                    <div class="container d-block d-sm-block d-sm-block d-md-block d-lg-flex d-xl-flex pl-md-0 pr-md-0">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <div class="image-container">
+                                <img data-v-5098fbb7 src="/img/foto1.jpg" alt="Caravana en atardecer" title="Viaja como quieras con Travel Campers" style="width: 530px; height: 350px; border-radius: 10px; border: 5px solid #E8DAEF; ">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 position-relative">
+                            <div class="title_container"><br>
+                                <label class="travel-row_label">Tu compañero de viaje por carretera</label>
+                                <h4 class="" travel-row_title mt-2>Viaja como quieras </h4><br>
+                            </div>
+                            <div class="d-flex">
+                                <ul class="pr-sm-4">
+                                    <li class="d-flex mb-4">
+                                        <i class="far fa-check-circle"></i>
+                                        <p class="mr-3">Más de 2.000 autocaravanas en España</p>
+                                    </li>
+                                    <li class="d-flex mb-4">
+                                        <i class="far fa-check-circle"></i>
+                                        <p class="mr-3">Experiencia completamente digital</p>
+                                    </li>
+                                    <li class="d-flex mb-4">
+                                        <i class="far fa-check-circle"></i>
+                                        <p class="mr-3">Seguro y asistencia en carretera 100% gratuita</p>
+                                    </li>
+                                    <li class="d-flex mb-4">
+                                        <i class="far fa-check-circle"></i>
+                                        <p class="mr-3">Ropa de cama, cocina y kit de limpieza</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+                {% for campers in pagination %}
+                <div class="presentacion">
+
+                    <div class="img">
+                        <a class="btn-solid-reg page-scroll" href="/readCamper/{{campers.id}}">
+                            <img src="img/{{campers.image}}" alt="" class="camper show">
+                        </a>
+                    </div>
+                    <div class="producto-info">
+
+                        <div class="producto-texto">
+                            <h1>{{campers.title}}</h1>
+                            <h3>Desde <span>{{campers.precio}}€/día</span></h3>
+                            <p>{{campers.descripcion}}</p>
+                            
+                        </div><br>
+                        <div class="precio-btn">
+                            <a href="/readCamper/{{campers.id}}">Ver información</a><br>
+                        </div><br>
+                    </div> <br>
+                </div><br>
+                {% endfor %}
+            </div>        </div>
+        <br>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+
+        {% endblock %}

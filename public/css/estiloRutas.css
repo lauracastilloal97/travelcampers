@@ -1,0 +1,227 @@
+
+.foto{
+    margin-top: 10px;
+}
+#padre {
+  position: relative;    /* para poder posicionar el texto de forma absoluta */
+  display: inline-block; /* para que solo ocupe el ancho de la imagen */
+}
+.card-title1 {
+  position: absolute;    /* posición absolute con respecto al padre */
+  top: 0;             /* posicionada en la esquina inferior derecha */
+  right: 5rem;
+    color: white;
+
+}
+
+
+.mb.card-body {
+    text-align: center;
+}
+
+.mb.card {
+    transition: all 0.5s ease;
+    border-radius: 0px / 0px;
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+/*    border: 2px solid black;*/
+/*    background: #DFDFDF;*/
+    margin-bottom: 20px;
+    display:flex;
+}
+
+
+.mb.card:hover {
+/*    background-color: #D6D6D6;*/
+    box-shadow: 5px 5px #b36fa2;
+
+}
+
+.fotos {
+    height: 400px;
+    padding: 20px;
+}
+
+.example-wrapper {
+    margin: 5px;
+    max-width: 4000px;
+    width: 100%;
+    font: 18px/1.5 sans-serif;
+}
+
+.example-wrapper code {
+    background-color: ghostwhite;
+    padding: 2px 6px;
+}
+
+#titulo{
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+.pagination{
+    margin: 0 auto;
+
+}
+
+button{
+
+    margin-bottom: 20px;
+    border-radius: 50px;
+
+}
+
+.altura{
+    display:flex;
+}
+
+#link{
+    color: black;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: #b36fa2;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.content-all{
+    width: 100%;
+}
+
+.content-img{
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    margin-top: 100px;
+    position: relative;
+    overflow: hidden;
+}
+.content-img img{
+    width: 100%;
+    transition: all 300ms;
+}
+
+.content-1{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    background: rgba(179,111,162,0.5);
+    top: 0;
+    transform: rotate(-30deg);
+    margin-left: -750px;
+    transition: all 300ms;
+        
+}
+
+.content-2{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    background: rgba(179,111,162,0.5);
+    top: 0;
+    transform: rotate(-30deg);
+    margin-left: -800px;
+    transition: all 500ms;
+    
+        
+}
+.content-3{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    background: rgba(179,111,162,0.5);
+    top: 0;
+    transform: rotate(30deg);
+    margin-left: -800px;
+    margin-top: -500px;  
+    transition: all 900ms;
+    box-shadow: 0px 1px 20px -5px black;
+}
+
+.content-4{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    background: rgba(179,111,162,0.5);
+    top: 0;
+    transform: rotate(30deg);
+    margin-left: -850px;
+    margin-top: -500px;  
+    transition: 700ms;
+}
+
+
+.content-img:hover .content-1{
+    width: 222%;
+    transition: all 900ms;
+}
+
+.content-img:hover .content-2{
+    width: 222%;
+    transition: all 300ms;
+}
+
+.content-img:hover .content-3{
+    width: 222%;
+    transition: all 500ms;
+}
+.content-img:hover .content-4{
+    width: 222%;
+    transition: all 700ms;
+}
+
+.content-img:hover img{
+    transform: scale(1.5);
+    transition: all 300ms;
+    opacity: 0.8;
+}
+
+.content-txt{
+    position: absolute;
+    top: 0;
+    width: 400px;
+    padding: 10px;
+    z-index: 10;
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.content-txt h2{
+    font-size: 30px;
+    opacity: 0;
+    transform: scale(0.2);
+    transition: all 300ms;
+}
+
+.content-txt p{
+    font-size: 20px;
+    margin-top: 10px;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 300ms;
+}
+
+.content-img:hover h2{
+    opacity: 1;
+    transition: all 300ms;
+    transform: scale(1);
+}
+
+.content-img:hover p{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 500ms;
+}
+
+

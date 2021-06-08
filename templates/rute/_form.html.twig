@@ -1,0 +1,50 @@
+{% block head %}
+{% block stylesheets %}
+<link href="../css/nuevaRuta.css" rel="stylesheet" />
+{% endblock %}
+
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="formulario col-md-12">
+
+
+        {{ form_start(form) }}
+
+        <br><div>
+            <label><b>{{ form_row(form.name, {"label": "Nombre"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.description, {"label": "Descripcion"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.visitar, {"label": "Lugar a visitar"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.dias, {"label": "Días que le llevara a cabo"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.km, {"label": "Kilómetros"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.tiempo, {"label": "Tiempo a tardar"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.parada, {"label": "Donde parar"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.restaurante, {"label": "Dónde comer"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.camping, {"label": "Dónde dormir"})}}</b></label>
+        </div><br>
+        <div>
+            <label><b>{{ form_row(form.image, {"label": "Imagen"})}}</b></label>
+        </div><br>
+    </div>
+</div>
+<div class="botones">
+    <button class="btn">{{ button_label|default('Guardar') }}</button>
+</div>
+{{ form_end(form) }}
+{% endblock %}

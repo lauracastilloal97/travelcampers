@@ -1,0 +1,122 @@
+.presentacion{
+	height: 400px;
+	width: 70%;
+	display: flex;
+	border-radius: 7px;
+	margin: auto;
+	box-shadow: 0px 14px 32px 0px rgba(179,111,162,0.5);
+	overflow: hidden;
+	box-sizing: border-box;
+	-webkit-transition:all .9s ease;
+}
+.presentacion:hover{
+	-webkit-transform:scale(1.05);
+-moz-transform:scale(1.05);
+-ms-transform:scale(1.05);
+-o-transform:scale(1.05);
+transform:scale(1.05);
+}
+
+.presentacion .img{
+	width: 50%;
+	align-items: center;
+}
+.presentacion .img img{
+	width: 100%;
+	align-items: center;
+	
+}
+
+.producto-info{
+	width: 50%;
+	border-radius: 0 7px 10px 7px;
+	background: white;
+}
+
+.producto-texto{
+	width: 100%;
+}
+
+.producto-texto h1{
+	margin-left: 38px;
+	padding-top: 52px;
+	font-size: 34px;
+	color: #474747;
+}
+
+.producto-texto h1, .precio-btn{
+	font-family: serif;
+}
+
+.producto-texto h2{
+	margin: 0 0 47px 38px;
+	font-size: 13px;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	color: #d2d2d2;
+	letter-spacing: .2em;
+}
+
+.producto-texto h3{
+	margin-left: 38px;
+	font-size: 22px;
+	color: #474747;
+	font-family: serif;
+}
+
+.producto-texto p{
+	height: 125px;
+	margin-left: 38px;
+	font-family: serif;
+	color: #8d8d8d;
+	line-height: 1.7em;
+}
+
+.precio-btn{
+	height: 103px;
+	margin-top: 17px;
+	display: flex;
+	justify-content: center;
+}
+
+.precio-btn a{
+	height: 50px;
+	width: 236px;
+	border-radius: 60px;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+	color: #fff;
+	text-align: center;
+	line-height: 25px;
+	background: #aa54ab;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.precio-btn a:hover{
+	background: #deacd4;
+}
+
+
+@media only screen and (max-width: 700px) {
+
+	.presentacion{
+		height: 800px;
+	}
+    .precio-btn{
+        display:none;
+    }
+	
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+  
+      .precio-btn{
+        display:none;
+    }
+    	.presentacion{
+		height: 600px;
+	}
+    
+}

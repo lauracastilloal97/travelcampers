@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Perfil{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+        <link href="../../css/navBar.css"rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+    <h1>Editar Perfil</h1>
+
+    {{ include('user/_form.html.twig', {'button_label': 'Guardar'}) }}
+
+    {{ include('user/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ruta{% endblock %}
+{% block head %}
+{% block stylesheets %}
+{{ parent() }}
+<link href="/css/estiloRutaUnica.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+{% endblock %}
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-0">
+    <div class="container mb-5 pb-5 road-trip-planner">
+        <div class="row mt-4 pt-5">
+            <div class="d-flex align-items-center col-12 col-md-8 col-lg-8">
+                <h1 class="road-trip-detail__title">Ruta por {{route.name}}</h1>
+            </div>
+        </div>
+        <div class="container road-trip-planner" style="z-index: 9;">
+            <div class="row">
+                <div class="col-12 col-lg-7 mt-4" style="padding-top: 1.5rem;">
+                    <div>
+                        <div class="mb-3 pb-4">
+                            <div>
+                                <p class="mb-4">{{ route.description }}
+                                </p>
+                                <p class="mb-4">Lo de viajar en autocaravana es un sueño para la mayoría de viajeros, aquellos a los que les gusta la libertad y visitar paisajes y naturaleza; y lo cierto es que cada vez más jóvenes se suman a esta moda, la del caravaning , que en realidad es más antigua de lo que creemos.
+
+                                    “ Más de un millón de autocaravanistas europeos recorren en la actualidad las carreteras de los cinco continentes disfrutando de una libertad que solo conocen verdaderamente quienes se han puesto al volante de una autocaravana. Pero esos deseos de viajar libremente teniendo cubiertas las necesidades de descanso y confort ya se buscaban hace ya más de un siglo, cuando nacían ideas totalmente revolucionarias que cambiaron el concepto del viaje”, señala el recién estrenado libro de Pedro Madera Viajar por libre. 50 rutas en furgo por España</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img class="foto mt-2 mb-4 v-lazy-image v-lazy-image-loaded" src="/img/{{ route.image }}" style="width: 450px; height:100%;">
+            </div>
+            <div class="pt-3 containers">
+                <div class="row">
+                    <div class="d-flex align-items-center col-12 mb-4 col-md-6">
+                        <div class="road-trip-detail__more--subhead-right dia">
+                            <p class="road-trip-detail__more--main-content text-center"><strong>{{route.dias}}</strong></p>
+                            <p class="road-trip-detail__more--content">Días aconsejados</p>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-md-6">
+                        <div class="road-trip-detail__more--route box">
+                            <div class="road-trip-detail__more--title-card text-center">Ruta Principal</div>
+                            <div class="d-flex">
+                                <div class="road-trip-detail__more--title-card col-6">
+                                    <p class="road-trip-detail__more--content text-center"><strong>{{route.km}}</strong></p>
+                                </div>
+                                <div class="road-trip-detail__more--title-card col-6">
+                                    <p class="road-trip-detail__more--content text-center"><strong>{{route.tiempo}}</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-4 road-trip-detail__more--category-container">
+                            <div class="d-flex align-items-center ruta">
+                                <img data-v-5098fbb7 src="https://images.prismic.io/indiecampers-demo/0c67ab3a-c1d3-402d-b5b6-f491d9f1cf12_indiecampers_icon_destination.svg?auto=compress,format&rect=0,25,150,100&w=2000&h=1334" class="road-trip-detail__more--title-category-icon v-lazy-image v-lazy-image-loaded" height="60px">
+                                <p class="road-trip-detail__more--title-item mb-2">Visitar</p>
+                            </div>
+                            <div class="road-trip-detail__more--detail-item ruta">
+                                <div class="row d-flex mb-2 col-12">
+                                    <p class="road-trip-detail__more--title"><strong>{{route.visitar}}</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4 road-trip-detail__more--category-container">
+                            <div class="d-flex align-items-center obj">
+                                <img data-v-5098fbb7 src="https://images.prismic.io/indiecampers-demo/327af945-600c-47ab-b0ac-24c6defac9af_indiecampers_icon_food.svg?auto=compress,format&rect=0,25,150,100&w=2000&h=1334" class="road-trip-detail__more--title-category-icon v-lazy-image v-lazy-image-loaded" height="60px">
+                                <p class="road-trip-detail__more--title-item mb-2">Come en</p>
+                            </div>
+                            <div class="road-trip-detail__more--detail-item obj">
+                                <div class="row d-flex mb-2 col-12">
+                                    <p class="road-trip-detail__more--title"><strong>{{route.restaurante}}</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4 road-trip-detail__more--category-container">
+                            <div class="d-flex align-items-center ruta">
+                                <img data-v-5098fbb7 src="https://images.prismic.io/indiecampers-demo/df806738-470e-4239-bd46-efc51880c7d7_indiecampers_icon_campervan.svg?auto=compress,format&rect=0,25,150,100&w=2000&h=1334" class="road-trip-detail__more--title-category-icon v-lazy-image v-lazy-image-loaded" height="60px">
+                                <p class="road-trip-detail__more--title-item mb-2">Parada obligatoria</p>
+                            </div>
+                            <div class="road-trip-detail__more--detail-item ruta">
+                                <div class="row d-flex mb-2 col-12">
+                                    <p class="road-trip-detail__more--title"><strong>{{route.parada}}</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4 road-trip-detail__more--category-container">
+                            <div class="d-flex align-items-center obj">
+                                <img data-v-5098fbb7 src="https://images.prismic.io/indiecampers-demo/b5c16a80-2b5d-427f-9c89-2e4c38635a18_indiecampers_icon_tent.svg?auto=compress,format&rect=0,25,150,100&w=2000&h=1334" class="road-trip-detail__more--title-category-icon v-lazy-image v-lazy-image-loaded" height="60px">
+                                <p class="road-trip-detail__more--title-item mb-2">Quédate en</p>
+                            </div>
+                            <div class="road-trip-detail__more--detail-item obj">
+                                <div class="row d-flex mb-2 col-12">
+                                    <p class="road-trip-detail__more--title"><strong>{{route.camping}}</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

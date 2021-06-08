@@ -1,0 +1,58 @@
+*{
+    font-family: 'Advent Pro', sans-serif;
+}
+
+.s-title{
+    font: inherit;
+    margin-left: 50px;
+    color: #b36fa2; 
+    font-size: 30px;
+}
+
+hr{
+    
+    color: gainsboro; 
+    background-color: gainsboro; 
+    width:100%;
+}
+
+button h2{
+    color: #b36fa2; 
+    background-color: #b36fa2;
+}
+
+a button{
+    padding: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #b36fa2;
+    border: 1px solid #b36fa2;
+    border-radius: 8px;
+}
+
+a button:hover{
+    background-color: #E8DAEF;
+    color: #b36fa2;
+    border: 1px solid #E8DAEF;
+}
+
+button{
+    padding: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #b36fa2;
+    border: 1px solid #b36fa2;
+    border-radius: 8px;
+}
+
+button:hover{
+    background-color: #E8DAEF;
+    color: #b36fa2;
+    border: 1px solid #E8DAEF;
+}
+
+.caja{
+    box-shadow: 0px 1px 10px rgba(179,111,162,0.5);
+}

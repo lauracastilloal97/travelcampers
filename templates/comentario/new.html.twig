@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo Comentario{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+        <link href="../../css/navBar.css"rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+    <h1>Nuevo Comentario</h1>
+
+    {{ include('comentario/_form.html.twig') }}
+{% endblock %}
+

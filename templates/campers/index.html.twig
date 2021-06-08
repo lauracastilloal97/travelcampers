@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Campers index{% endblock %}
+
+{% block body %}
+    <h1>Campers index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Matricula</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Precio</th>
+                <th>Descripcion</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for camper in campers %}
+            <tr>
+                <td>{{ camper.id }}</td>
+                <td>{{ camper.matricula }}</td>
+                <td>{{ camper.marca }}</td>
+                <td>{{ camper.modelo }}</td>
+                <td>{{ camper.precio }}</td>
+                <td>{{ camper.descripcion }}</td>
+                <td>
+                    <a href="{{ path('campers_show', {'id': camper.id}) }}">show</a>
+                    <a href="{{ path('campers_edit', {'id': camper.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('campers_new') }}">Create new</a>
+{% endblock %}

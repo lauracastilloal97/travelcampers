@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Rute{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+        <link href="../../css/navBar.css"rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+    <h1>Editar Rute</h1>
+
+    {{ include('rute/_form.html.twig', {'button_label': 'Editar'}) }}
+
+    {{ include('rute/_delete_form.html.twig') }}
+{% endblock %}

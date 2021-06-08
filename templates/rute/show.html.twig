@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ruta{% endblock %}
+
+{% block body %}
+    <h1>Rute</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rute.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ rute.name }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ rute.description }}</td>
+            </tr>
+            <tr>
+                <th>Imagen</th>
+                <td>{{ rute.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('rute_edit', {'id': rute.id}) }}">editar</a>
+
+    {{ include('rute/_delete_form.html.twig') }}
+{% endblock %}

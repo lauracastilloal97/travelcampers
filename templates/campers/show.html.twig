@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Campers{% endblock %}
+
+{% block body %}
+    <h1>Campers</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ camper.id }}</td>
+            </tr>
+            <tr>
+                <th>Matricula</th>
+                <td>{{ camper.matricula }}</td>
+            </tr>
+            <tr>
+                <th>Marca</th>
+                <td>{{ camper.marca }}</td>
+            </tr>
+            <tr>
+                <th>Modelo</th>
+                <td>{{ camper.modelo }}</td>
+            </tr>
+            <tr>
+                <th>Precio</th>
+                <td>{{ camper.precio }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ camper.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('campers_index') }}">back to list</a>
+
+    <a href="{{ path('campers_edit', {'id': camper.id}) }}">edit</a>
+
+    {{ include('campers/_delete_form.html.twig') }}
+{% endblock %}

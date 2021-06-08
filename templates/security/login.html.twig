@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Iniciar Sesion{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link href="css/estiloLogin.css"rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+{% if error %}
+<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+{#{% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}#}
+<main>
+    <div class="contenedor__todo">
+        <div class="caja__trasera">
+            <div class="caja__trasera-register">
+                <h3>¿Aún no tienes una cuenta?</h3>
+                <p>Regístrate para iniciar sesión</p>
+                <a href="/register">
+                    <button id="btn__iniciar-sesion">Registrarse</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="contenedor__login-register">
+            <form method="post" class="formulario__login">
+                <h2>Iniciar Sesión</h2>
+                <input type="email" value="{{ last_username }}" id="inputEmail" name="email" placeholder="Email" required autofocus>
+                <input type="password" name="password" id="inputPassword" placeholder="Contraseña" required>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <button class="btn btn-lg btn-primary" type="submit">Iniciar Sesion</button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}

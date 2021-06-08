@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rutas{% endblock %}
+{% block head %}
+{% block stylesheets %}
+{{ parent() }}
+<link href="css/estiloRutas.css" rel="stylesheet" />
+{% endblock %}
+{% endblock %}
+
+{% block body %}
+<div class="p-0">
+    <div id="padre">
+        <img src="/img/ruta.jpg" style="height: 250px; width: 100%;">
+        <div class="card-title1">
+            <div class="col-12 col-lg-8 offset-lg-2 text-center foto">
+                <h1>Rutas</h1>
+                <p>
+                    Encuentra las mejores etapas para tu próximo viaje en autocaravana. Tenemos todo tipo de rutas, desde viajes en ciudad hasta aventuras para descubrir por la costa.
+                </p>
+            </div>
+        </div>
+    </div><br>
+    <div class="new-row">
+        <div class="col-12 col-lg-8 offset-lg-2 text-center"><br>
+            <h2 class="row-title mb-3">Encuentra tu próximo viaje en carretera</h2>
+            <p class="row-text mb-5">
+                A continuación encontrarás una lista de todos los itinerarios de viajes en carretera que hemos creado entre nuestros destinos en España. Pulsa el botón de un país para filtrar la lista y mostrar sólo los viajes en un país en particular. O simplemente recorre la lista hasta que encuentres una ruta que te guste!
+            </p>
+        </div>
+        {% for route in routes %}
+        <div class="content-all">
+            <div class="content-img">
+                <a id="link" href="/readRoute/{{route.id}}">
+                    <img class="card-img-top fotos" src="img/{{route.image}}" alt="Card image cap">
+                    <div class="content-txt">
+                        <h2>{{route.name}}</h2>
+                        <p>{{route.description}}</p>
+                    </div>
+                    <div class="content-1"></div>
+                    <div class="content-2"></div>
+                    <div class="content-3"></div>
+                    <div class="content-4"></div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        <br>
+    {% endblock %}

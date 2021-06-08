@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rutas{% endblock %}
+
+{% block body %}
+    <h1>Rutas</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Imagen</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rute in rutes %}
+            <tr>
+                <td>{{ rute.id }}</td>
+                <td>{{ rute.name }}</td>
+                <td>{{ rute.description }}</td>
+                <td>{{ rute.image }}</td>
+                <td>
+                    <a href="{{ path('rute_show', {'id': rute.id}) }}">Ver</a>
+                    <a href="{{ path('rute_edit', {'id': rute.id}) }}">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
